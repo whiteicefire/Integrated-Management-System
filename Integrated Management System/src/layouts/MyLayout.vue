@@ -16,8 +16,8 @@
         </q-btn>
    
         <q-toolbar-title>
-          <!-- {{$t('System')}}
-          <div slot="subtitle">hello word</div> -->
+          {{$t('System')}}
+          <div slot="subtitle">hello word</div>
         </q-toolbar-title>
         <q-btn
           class="langbtn"
@@ -25,6 +25,9 @@
           size="md"
           icon="palette"
         >
+          <q-tooltip anchor="bottom middle" self="top middle" :offset="[10, 10]">
+             切换主题
+          </q-tooltip>
         </q-btn>
         <q-btn class="langbtn" size="md" icon="g_translate">
           <q-popover>
@@ -34,7 +37,17 @@
             </q-list>
           </q-popover>
         </q-btn>
-        
+        <q-btn
+          class="langbtn"
+          @click="toggleFullscreen()"
+          size="md"
+          :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'zoom_out_map'"
+          title="全屏"
+        >
+           <q-tooltip anchor="bottom middle" self="top middle" :offset="[10, 10]">
+             全屏
+          </q-tooltip>
+        </q-btn>
         <div color="primary">
           <img width="40" height="40" class="headimg" :src="headimg"/>
           <q-popover>
@@ -64,17 +77,13 @@
         no-border
         link
         inset-delimiter
+        class="q-list-menus"
       >
-         <!-- <img src="../assets/sjwszz_login.svg" height="40px" width="60px" alt="心医至成" title="心医至成" style="margin:0 auto"/> -->
-        <q-list-header>{{$t('Integrated Management System')}}</q-list-header>
-        <!-- <q-item :to="item.path" v-for="(item , index) in menuState" :key="index" @click.native="menurouter(item)">
-          <q-item-side :icon="item.icon" />
-          <q-item-main :label="item.lable" :sublabel="item.sublabel" />
-          <q-item v-for="(t , index) in item" :key="index">
-            <q-item-main :label="t.lable" />
-          </q-item>
-        </q-item> -->
-        <q-collapsible separator class="q_menu" :to="item.path" v-for="(item , index) in menuState" :key="index" @click.native="menurouter(item)" :icon="item.icon" :label="item.lable" :collapse-icon="item.collapseicon">
+        <div class="logo_row">
+          <img src="../assets/sjwszz_login.svg" height="60px" width="80px" alt="心医至成" title="心医至成" style="margin-left:10px;"/>
+          <q-list-header class="porduct_title">{{$t('Integrated Management System')}}</q-list-header>
+        </div>
+        <q-collapsible class="q_menu" :to="item.path" v-for="(item , index) in menuState" :key="index" @click.native="menurouter(item)" :icon="item.icon" :label="item.lable" :collapse-icon="item.collapseicon">
           <!-- <q-item :to="t.path" v-for="(t, index) in item.children" :key="index" @click.native="menurouter(t)">
             <q-item-main :label="t.lable" />
           </q-item> -->
@@ -127,9 +136,13 @@
 import { openURL } from 'quasar'
 import { Notify } from 'quasar'
 import { colors } from 'quasar'
+import FtyBreadcrumbs from "src/components/FtyBreadcrumbs";
 
 export default {
   name: 'MyLayout',
+  components: {
+    FtyBreadcrumbs,
+  },
   data () {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
@@ -219,7 +232,10 @@ export default {
         this.$store.commit('SET_PRIMARY', '#DB2828')
         this.$store.commit('SET_INFO', '#f44336')        
       }
-    }
+    },
+    toggleFullscreen() {
+      this.$q.fullscreen.toggle();
+    },
   }
 }
 </script>
@@ -284,5 +300,20 @@ export default {
 }
 .negative_color{
   background-color: #DB2828;
+}
+.logo_row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+  background-color: #fff;
+}
+.porduct_title{
+  font-size: 16px;
+  padding-left: 5px;
+  color: #424242;
+}
+.q-list-menus{
+  padding-top: 0;
 }
 </style>
