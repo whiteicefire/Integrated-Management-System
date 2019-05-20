@@ -17,7 +17,7 @@ export default {
             {path: '/zhgl_cftjfx', name:'zhgl_cftjfx', lable: '处方统计分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
             {path: '/zhgl_cjjzfx', name:'zhgl_cjjzfx', lable: '村级就诊分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
             {path: '/zhgl_smjzltj', name:'zhgl_smjzltj', lable: '实名就诊率统计',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-            {path: '/zhgl_smjzltj', name:'zhgl_smjzltj', lable: '民营医院门诊统计分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+            {path: '/zhgl_myyymztjfx', name:'zhgl_myyymztjfx', lable: '民营医院门诊统计分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
           ]
       },
       {
@@ -34,7 +34,7 @@ export default {
           {path: '/zhgl_ssfx2', name:'zhgl_ssfx2', lable: '手术分析2',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
           {path: '/zhgl_yngrfx', name:'zhgl_yngrfx', lable: '院内感染分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
           {path: '/zhgl_cwtj', name:'zhgl_cwtj', lable: '床位统计',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-          {path: '/zhgl_cwtj', name:'zhgl_myyyzytjfx', lable: '民营医院住院统计分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+          {path: '/zhgl_myyyzytjfx', name:'zhgl_myyyzytjfx', lable: '民营医院住院统计分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         ]
       },
       {
@@ -103,10 +103,10 @@ export default {
         {path: '/zhgl_jtdaglfx', name:'zhgl_jtdaglfx', lable: '家庭档案管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_gxyglfx', name:'zhgl_gxyglfx', lable: '高血压管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_gxyglfx2', name:'zhgl_gxyglfx2', lable: '高血压管理分析2',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-        {path: '/zhgl_tlbglfx', name:'zhgl_tlbglfx', lable: '糖尿病管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-        {path: '/zhgl_tlbglfx2', name:'zhgl_tlbglfx2', lable: '糖尿病管理分析2',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+        {path: '/zhgl_tnbglfx', name:'zhgl_tnbglfx', lable: '糖尿病管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+        {path: '/zhgl_tnbglfx2', name:'zhgl_tnbglfx2', lable: '糖尿病管理分析2',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_lnrglfx', name:'zhgl_lnrglfx', lable: '老年人管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-        {path: '/zhgl_jbzzglfx', name:'zhgl_jbzzglfx', lable: '疾病控制管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+        {path: '/zhgl_jbkzglfx', name:'zhgl_jbkzglfx', lable: '疾病控制管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_ycfglfx', name:'zhgl_ycfglfx', lable: '孕产妇管理分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_ycfglfx2', name:'zhgl_ycfglfx2', lable: '孕产妇管理分析2',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_fnbpcfx', name:'zhgl_fnbpcfx', lable: '妇女病普查分析',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
@@ -124,8 +124,8 @@ export default {
       children:[
         {path: '/zhgl_yymzfyxxb', name:'zhgl_yymzfyxxb', lable: '医院门诊费用信息表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
         {path: '/zhgl_yyzyfyxxb', name:'zhgl_yyzyfyxxb', lable: '医院住院费用信息表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-        {path: '/zhgl_zfymqzb', name:'zhgl_zfymqzb', lable: '自费疫苗情况表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-        {path: '/zhgl_mfymqzb', name:'zhgl_mfymqzb', lable: '免费疫苗情况表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false}
+        {path: '/zhgl_zfymqkb', name:'zhgl_zfymqkb', lable: '自费疫苗情况表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+        {path: '/zhgl_mfymqkb', name:'zhgl_mfymqkb', lable: '免费疫苗情况表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false}
       ]
     },
     {
@@ -188,7 +188,7 @@ export default {
             {path: '/zhgl_spjkfpgzqkbb', name:'zhgl_spjkfpgzqkbb', lable: '健康扶贫工作情况报表',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
             {path: '/zhgl_spylfwcslyb', name:'zhgl_spylfwcslyb', lable: '医疗废物产生量月报',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
             {path: '/zhgl_spzyyskqyb', name:'zhgl_spzyyskqyb', lable: '支援医生考勤月报',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
-            {path: '/zhgl_sppzysygzlyb', name:'zhgl_sppzysygzlyb', lable: '派驻医师月工作量月报审批',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
+            {path: '/zhgl_sppzysygzlybsp', name:'zhgl_sppzysygzlybsp', lable: '派驻医师月工作量月报审批',  icon: 'home', sublabel: '', collapseicon: '1', tree: false},
           ] 
         },
         { 
