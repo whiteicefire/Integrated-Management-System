@@ -41,7 +41,7 @@
 <script>
 import { date, colors } from 'quasar'
 import { async } from 'q';
-import { zhgl_mzhltj_sel } from '@/api/zhgl_mzhltj_sel'
+// import { zhgl_mzhltj_sel } from '@/api/zhgl_mzhltj_sel'
 
 export default {
   name: 'zhgl_ylfw',
