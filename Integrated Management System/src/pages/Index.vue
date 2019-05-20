@@ -82,6 +82,7 @@ export default {
     async loadData () {
       try {
         this.msg = await zhgl_sysj_sel(this.$store.state.user.openid)
+        console.log('msg',this.msg)
         this.echarts()
       } catch (e) {}
     },
