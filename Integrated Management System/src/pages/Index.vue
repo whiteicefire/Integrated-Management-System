@@ -5,37 +5,17 @@
        <chart ref="chart1" :options="optionjzl" :auto-resize="true"></chart>
     </div>
     <div class="chart">
-        <chart ref="chart1" :options="optionzy" :auto-resize="true"></chart>
+        <chart ref="chart2" :options="optionzy" :auto-resize="true"></chart>
     </div>
     <div class="chart">
-        <chart ref="chart1" :options="optioncy" :auto-resize="true"></chart>
+        <chart ref="chart3" :options="optioncy" :auto-resize="true"></chart>
     </div>
     <div class="chart">
-        <chart ref="chart1" :options="option4" :auto-resize="true"></chart>
+        <chart ref="chart4" :options="option4" :auto-resize="true"></chart>
     </div>
   </div>
   </div>
 </template>
-
-<style>
-.chart_display{
-  display: flex;
-  width: 100%;
-  flex-flow: row wrap;
-}
-.chart_display .chart{
-  width: 50%;
-}
- @media (max-width: 1350px){
-  .chart_display .chart{
-   flex: 1;
-   width: auto;
-  }
-  .chart_display .chart .echarts{
-    margin: auto;
-  }
-}
-</style>
 
 <script>
 import { date, colors } from 'quasar'
@@ -51,7 +31,7 @@ export default {
       optionzy:{},
       optioncy:{},
       option4:{},
-      primary:this.$store.getters.primary,
+      primary:this.$store.getters.info,
       msg:{}
     }
   },
@@ -65,7 +45,7 @@ export default {
       }
     },
     chargeprimary() {
-      return this.$store.getters.primary
+      return this.$store.getters.info
     }
   },
   watch: {
@@ -76,8 +56,20 @@ export default {
   },
   mounted () {
     this.loadData()
+    this.init()
   },
   methods: {
+    init () {
+        const self = this
+        setTimeout(() => {
+            window.onresize = function () {
+            self.$refs.chart1.resize()
+            self.$refs.chart2.resize()
+            self.$refs.chart3.resize()
+            self.$refs.chart4.resize()
+            }
+        }, 20)
+    },
     time () {
       let timeStamp = Date.now()
       let formattedString = date.formatDate(timeStamp, 'YYYY-MM-DDTHH:mm:ss.SSSZ')
@@ -200,7 +192,7 @@ export default {
                 {
                     name:'',  //门急诊人次
                     type:'bar',
-                    barWidth : 20,
+                    barWidth : 15,
                     data:ptmdata.jzlData,
                     color: this.primary
                 },
@@ -280,7 +272,7 @@ export default {
                   {
                       name:'',  
                       type:'bar',
-                      barWidth : 20,
+                      barWidth : 15,
                       data:ptmdata.ryData,
                       color: this.primary
                   },
@@ -361,7 +353,7 @@ export default {
                   {
                       name:'',  //门急诊人次
                       type:'bar',
-                      barWidth : 20,
+                      barWidth : 15,
                       data:ptmdata.cyData,
                       color: this.primary
                   },
@@ -441,7 +433,7 @@ export default {
                   {
                       name:'',  
                       type:'bar',
-                      barWidth : 20,
+                      barWidth : 15,
                       data:ptmdata.ciData,
                       color: this.primary
                   },
@@ -451,3 +443,33 @@ export default {
   }
 }
 </script>
+
+<style>
+.chart_display{
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+}
+.chart_display .chart{
+  width: 50%;
+}
+ @media (max-width: 1350px){
+  .chart_display .chart{
+   width: 100%;
+  }
+  .chart_display .chart .echarts{
+    margin: auto;
+  }
+}
+.echarts{
+    width: 95%;
+}
+/* .echarts div{
+    width: 100%;
+    height: auto;
+}
+.echarts div canvas{
+    width: 100%;
+    height: auto;
+} */
+</style>
