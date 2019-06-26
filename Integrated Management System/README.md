@@ -39,10 +39,8 @@
 
 ## Install
 ```bush
-npm install -g vue-cli
-```
-```bush
-npm install -g quasar-cli
+npm install -g @quasar/cli
+
 ```
 ```bush
 npm install
@@ -55,3 +53,4 @@ quasar dev
 ### Production(Build)
 ```bush
 quasar build
+```
