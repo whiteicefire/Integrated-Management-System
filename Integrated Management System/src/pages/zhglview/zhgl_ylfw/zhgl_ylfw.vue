@@ -1,20 +1,6 @@
 <template>
   <div>
     医疗服务首页
-    <div class="chart_display">
-      <div class="chart">
-         <chart ref="chart1" :options="optionjzl" :auto-resize="true"></chart>
-      </div>
-      <div class="chart">
-          <chart ref="chart1" :options="optionzy" :auto-resize="true"></chart>
-      </div>
-      <div class="chart">
-          <chart ref="chart1" :options="optioncy" :auto-resize="true"></chart>
-      </div>
-      <div class="chart">
-          <chart ref="chart1" :options="option4" :auto-resize="true"></chart>
-      </div>
-    </div>
   </div>
 </template>
 

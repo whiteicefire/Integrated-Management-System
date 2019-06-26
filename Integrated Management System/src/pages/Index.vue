@@ -36,14 +36,6 @@ export default {
     }
   },
   computed: {
-    drawerState: {
-      get () {
-        return this.$store.state.showcase.drawerState
-      },
-      set (val) {
-        this.$store.commit('showcase/updateDrawerState', val)
-      }
-    },
     chargeprimary() {
       return this.$store.getters.info
     }
@@ -464,6 +456,7 @@ export default {
 }
 .echarts{
     width: 95%;
+    margin: auto;
 }
 /* .echarts div{
     width: 100%;

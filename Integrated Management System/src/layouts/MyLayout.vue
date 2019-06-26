@@ -57,6 +57,7 @@
           </q-popover>
         </div>
       </q-toolbar>
+      <tags-view></tags-view>
       <q-tabs color="primary">
           <q-route-tab v-for="(item , index) in tabsState" :key="index"
           icon=""
@@ -137,11 +138,13 @@ import { openURL } from 'quasar'
 import { Notify } from 'quasar'
 import { colors } from 'quasar'
 import FtyBreadcrumbs from "src/components/FtyBreadcrumbs";
+import TagsView from "src/components/TagsView";
 
 export default {
   name: 'MyLayout',
   components: {
     FtyBreadcrumbs,
+    TagsView
   },
   data () {
     return {

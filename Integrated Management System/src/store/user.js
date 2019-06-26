@@ -30,7 +30,6 @@ const user = {
           
             return new Promise((resolve, reject) => {
                 loginService.loginByUsername(userid, userinfo.password).then(response => {
-                    console.log('Login',response)
                     const data = response.data
                     commit('SET_TOKEN', data.ut)
                     commit('SET_OPENID', data.openid)
@@ -65,11 +64,9 @@ const user = {
                 })
             })
         },
-        GetUserInfo({ commit }, openid) {
-            console.log('usercommit',openid)           
+        GetUserInfo({ commit }, openid) {         
             return new Promise((resolve, reject) => {
                 loginService.getUserInfo().then((response) => {
-                    console.log('userinfo',response.data)
                     const data = response.data.data
                     const userInfo = {
                         name: data.xingming,

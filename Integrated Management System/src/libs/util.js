@@ -107,12 +107,16 @@ util.openAccesseMenu = function (accesseMenu) {
 }
 
 util.openNewPage = function (vm, name, argu, query) {
-    let pageOpenedList = vm.$store.state.app.pageOpenedList;
+    
+    let pageOpenedList = vm.$store.state.menu.pageOpenedList;
     let openedPageLen = pageOpenedList.length;
+    
     let i = 0;
     let tagHasOpened = false;
     while (i < openedPageLen) {
+        
         if (name === pageOpenedList[i].name) {  // 页面已经打开
+           console.log('222222222')
             vm.$store.commit('pageOpenedList', {
                 index: i,
                 argu: argu,
@@ -124,9 +128,12 @@ util.openNewPage = function (vm, name, argu, query) {
         i++;
     }
     if (!tagHasOpened) {
-        let tags = vm.$store.state.app.openAccessMenu.filter((item) => {
+        console.log('name',name)
+        console.log('pageOpenedList',vm.$store.state.menu.openAccessMenu)
+        let tags = vm.$store.state.menu.openAccessMenu.filter((item) => {
             return name === item.name;
         });
+        console.log('tags',tags)
         if (tags.length > 0) {
             let tag = tags[0];
             if (argu) {

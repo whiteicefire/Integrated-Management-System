@@ -54,7 +54,6 @@ service.interceptors.request.use(config => {
 // respone interceptor
 service.interceptors.response.use(
   response => {
-    console.log('service.response',response)
     loading.hide(response.config)
     const res = response.status;
     if (res !== 200) {
